@@ -3,12 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {TolgeeProvider} from "@tolgee/react";
+import {UI} from "@tolgee/ui";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <TolgeeProvider
+            apiKey={process.env.REACT_APP_TOLGEE_API_KEY}
+            apiUrl={process.env.REACT_APP_TOLGEE_API_URL}
+            ui={process.env.REACT_APP_TOLGEE_API_URL ? UI : undefined}
+            availableLanguages={["en", "cs"]}
+        >
+            <App/>
+        </TolgeeProvider>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

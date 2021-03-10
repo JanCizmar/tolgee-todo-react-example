@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import {Box, Button, Container, TextField, Typography} from "@material-ui/core";
 import {loadTasks, saveTasks} from "./tasksService";
+import {T} from "@tolgee/react";
+import {ListAlt} from "@material-ui/icons";
+import {LanguageMenu} from "./LanguageMenu";
 
 function App() {
     const [taskTextValue, setTaskTextValue] = useState("");
@@ -25,20 +28,24 @@ function App() {
         <div>
             <header>
                 <Container maxWidth="sm">
+                    <Box mt={2} display="flex" justifyContent="space-between">
+                        <ListAlt fontSize={"large"}/>
+                        <LanguageMenu/>
+                    </Box>
                     <Box mt={4}>
-                        <Typography variant="h3">My very cool To Do App</Typography>
-                        <Typography variant="body1">Welcome to my brand new to do app!</Typography>
+                        <Typography variant="h3"><T>My very cool To Do App</T></Typography>
+                        <Typography variant="body1"><T>Welcome to my brand new to do app!</T></Typography>
                     </Box>
                     <Box mt={5}>
                         <Box display="flex">
                             <Box flexGrow={1}>
                                 <TextField size={"small"} fullWidth value={taskTextValue}
                                            onChange={event => setTaskTextValue(event.target.value)}
-                                           id="filled-basic" label="New task" variant="outlined"
+                                           id="filled-basic" label={<T>New task</T>} variant="outlined"
                                 />
                             </Box>
                             <Box ml={2} display="inline">
-                                <Button onClick={add} disabled={addDisabled} size="large" color="primary" variant="outlined">Add</Button>
+                                <Button onClick={add} disabled={addDisabled} size="large" color="primary" variant="outlined"><T>Add</T></Button>
                             </Box>
                         </Box>
 
@@ -48,7 +55,7 @@ function App() {
                                     <Box flexGrow={1} alignItems="center">
                                         <Typography variant="subtitle1">{t}</Typography>
                                     </Box>
-                                    <Button color="secondary" onClick={() => remove(index)}>Delete</Button>
+                                    <Button color="secondary" onClick={() => remove(index)}><T>Delete</T></Button>
                                 </Box>
                             )}
                         </Box>
