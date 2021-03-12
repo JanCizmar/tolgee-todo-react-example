@@ -26,7 +26,7 @@ function App() {
             <header>
                 <Container maxWidth="sm">
                     <Box mt={4}>
-                        <Typography variant="h3">My very cool To Do App</Typography>
+                        <Typography variant="h3">My To Do App</Typography>
                         <Typography variant="body1">Welcome to my brand new to do app!</Typography>
                     </Box>
                     <Box mt={5}>
