@@ -33,7 +33,7 @@ function App() {
                         <LanguageMenu/>
                     </Box>
                     <Box mt={4}>
-                        <Typography variant="h3"><T>My very cool To Do App</T></Typography>
+                        <Typography variant="h3"><T>My ToDo App</T></Typography>
                         <Typography variant="body1"><T>Welcome to my brand new to do app!</T></Typography>
                     </Box>
                     <Box mt={5}>
